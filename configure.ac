@@ -342,4 +342,5 @@ AC_SUBST([static_LDFLAGS])
 AC_SUBST([static_LIBS])
 
 AC_CONFIG_FILES([config.mk htslib.pc.tmp:htslib.pc.in])
+LIBS+=-ldl
 AC_OUTPUT

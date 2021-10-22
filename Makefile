@@ -136,6 +136,7 @@ print-version:
 
 
 LIBHTS_OBJS = \
+	iv.o \
 	kfunc.o \
 	knetfile.o \
 	kstring.o \
