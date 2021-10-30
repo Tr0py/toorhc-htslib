@@ -49,3 +49,5 @@ lib*.so.*
 
 /TAGS
 install/
+aclocal.m4
+test/

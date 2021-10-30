@@ -4,3 +4,5 @@ hellohts: hellohts.c
 clean:
 	rm -f hellohts
 
+run:
+	LD_LIBRARY_PATH=../install/iv/lib ~/IV ~/glib ./hellohts -c ../poc/PoC-stack.cram

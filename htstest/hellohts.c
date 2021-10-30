@@ -183,6 +183,13 @@ static void usage(FILE *fp, int status)
 
 int main(int argc, char **argv)
 {
+    void* target = 0x7FABADBD0000LL;
+    printf("touching %p\n", target);
+    *(int*)target = 0xaaaa;
+    printf("touching value: %d\n", (int*)target);
+    return 0;
+
+
     static const struct option options[] = {
         { "header-only", no_argument, NULL, 'h' },
         { "no-header", no_argument, NULL, 'H' },
@@ -226,8 +233,8 @@ int main(int argc, char **argv)
          * The buffer overflow vulnerability goes
          * here.
          */
-        hFILE *fp = hopen(argv[i], "r");
-        //hFILE *fp = hopen("./data/test.cram", "r");
+        //hFILE *fp = hopen(argv[i], "r");
+        hFILE *fp = hopen("./data/test.cram", "r");
         if (fp == NULL) {
             error("can't open \"%s\"", argv[i]);
             continue;
